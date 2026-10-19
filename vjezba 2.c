@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
 #define FILE_NOT_OPENED -1
 #include <stdio.h>
 #include <stdlib.h>
@@ -73,18 +73,17 @@ Position findLName(char* lastName, Position p) {
 		if (strcmp(q->lastname, lastName) == 0)
 			return q;
 	}
+	return NULL;
 }
 
 int deletePerson(char* lastN, Position p) {
-	Position prev = p;
-	Position curr = findLName(lastN, prev);
-	if (curr == NULL)
-		return -1;
+	Position prev = p;                    
+	Position curr = prev->next;
+	curr = findLName(lastN, prev);
 	while (prev->next != curr)
 		prev = prev->next;
 	prev->next = curr->next;
 	free(curr);
-	return 0;
 }
 
 int main() {
@@ -101,4 +100,3 @@ int main() {
 
 	return 0;
 }
-
