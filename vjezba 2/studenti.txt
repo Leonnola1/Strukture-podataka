@@ -1,0 +1,5 @@
+Ime      prezime (m,s,st)
+Leon     Nola     1:30:20
+Petar    Kreten   1:30:30
+Andrija  Nola
+ 
